@@ -83,7 +83,6 @@ $this->breadcrumbs = array(
 
 
 
-    <!-- Bagian Kanan: Form Login -->
     <div class="bg-white p-6 rounded-xl shadow-xl w-full max-w-md">
         <h2 class="text-4xl font-extrabold text-center text-gray-800 mb-6">Login</h2>
 
@@ -131,7 +130,6 @@ $this->breadcrumbs = array(
             </button>
         </div>
 
-        <!-- Tombol Register -->
         <div class="text-center">
             <p class="text-sm text-gray-700">Don't have an account? 
                 <a href="<?= Yii::app()->createUrl('/site/register') ?>" class="text-blue-500 hover:text-blue-600 font-semibold">

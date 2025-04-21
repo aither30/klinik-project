@@ -13,14 +13,12 @@
 
     <?php echo CHtml::hiddenField('User[id]', $users->id); ?>
 
-    <!-- Username -->
     <div class="mb-4">
         <?php echo $form->labelEx($users, 'username', ['class' => 'block text-gray-700 font-semibold mb-1']); ?>
         <?php echo $form->textField($users, 'username', ['class' => 'border border-gray-300 rounded p-2 w-full']); ?>
         <?php echo $form->error($users, 'username', ['class' => 'text-sm text-red-600 mt-1']); ?>
     </div>
 
-    <!-- Role -->
     <div class="mb-4">
         <?php echo $form->labelEx($users, 'role', ['class' => 'block text-gray-700 font-semibold mb-1']); ?>
         <?php echo $form->dropDownList($users, 'role', [
@@ -33,21 +31,18 @@
         <?php echo $form->error($users, 'role', ['class' => 'text-sm text-red-600 mt-1']); ?>
     </div>
 
-    <!-- Email -->
     <div class="mb-4">
         <?php echo $form->labelEx($users, 'email', ['class' => 'block text-gray-700 font-semibold mb-1']); ?>
         <?php echo $form->textField($users, 'email', ['class' => 'border border-gray-300 rounded p-2 w-full']); ?>
         <?php echo $form->error($users, 'email', ['class' => 'text-sm text-red-600 mt-1']); ?>
     </div>
 
-    <!-- Gambar -->
     <div class="mb-4">
         <?php echo $form->labelEx($users, 'image', ['class' => 'block text-gray-700 font-semibold mb-1']); ?>
         <?php echo $form->fileField($users, 'image', ['class' => 'border border-gray-300 rounded p-2 w-full']); ?>
         <?php echo $form->error($users, 'image', ['class' => 'text-sm text-red-600 mt-1']); ?>
     </div>
 
-    <!-- Aksi -->
     <div class="flex justify-between mt-6">
         <a href="<?php echo Yii::app()->createUrl('dashboard/adminDashboard'); ?>" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded">
             ← Kembali

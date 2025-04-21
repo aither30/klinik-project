@@ -17,7 +17,7 @@ class Treatment extends CActiveRecord
 
     public function tableName()
     {
-        return 'treatments'; // pastikan ini sesuai dengan nama tabel
+        return 'treatments'; 
     }
 
     public function rules()

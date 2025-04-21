@@ -1,11 +1,11 @@
 <div class="m-6 p-6 bg-white rounded-lg shadow-lg">
     <h1 class="text-2xl font-bold mb-4">Daftar Pembayaran</h1>
-   
+
 
     <?php if (empty($payments)): ?>
         <a href="<?php echo $this->createUrl('dashboard/checkPayment'); ?>" class="btn btn-primary">
             generate pembayaran
-</a>
+        </a>
     <?php else: ?>
         <table class="min-w-full table-auto">
             <thead>
@@ -25,9 +25,8 @@
                         <td class="py-2 px-4 border-b"><?php echo number_format($payment->total_amount, 0, ',', '.'); ?> IDR</td>
                         <td class="py-2 px-4 border-b"><?php echo CHtml::encode($payment->status); ?></td>
                         <td class="py-2 px-4 border-b">
-                            <!-- Tombol untuk memeriksa pembayaran -->
-                            <a href="<?php echo $this->createUrl('dashboard/showPayment', ['prescriptionId' => $payment->prescription_id]); ?>" 
-                               class="text-blue-500 hover:text-blue-700">
+                            <a href="<?php echo $this->createUrl('dashboard/showPayment', ['prescriptionId' => $payment->prescription_id]); ?>"
+                                class="text-blue-500 hover:text-blue-700">
                                 Cek Pembayaran
                             </a>
                         </td>

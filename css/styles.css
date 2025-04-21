@@ -657,90 +657,6 @@ video {
   top: 4.5rem;
 }
 
-.top-14 {
-  top: 3.5rem;
-}
-
-.left-1\/2 {
-  left: 50%;
-}
-
-.left-1 {
-  left: 0.25rem;
-}
-
-.left-10 {
-  left: 2.5rem;
-}
-
-.left-20 {
-  left: 5rem;
-}
-
-.top-20 {
-  top: 5rem;
-}
-
-.top-4 {
-  top: 1rem;
-}
-
-.top-\[\] {
-  top: ;
-}
-
-.top-\[calc\] {
-  top: calc;
-}
-
-.top-\[calc\(\)\] {
-  top: calc();
-}
-
-.top-\[calc\(50\%\)\] {
-  top: calc(50%);
-}
-
-.top-\[calc\(50\%\+\)\] {
-  top: calc(50% + );
-}
-
-.top-\[calc\(50\%\+8re\)\] {
-  top: calc(50% + 8re);
-}
-
-.top-\[calc\(50\%\+8rem\)\] {
-  top: calc(50% + 8rem);
-}
-
-.top-\[calc\(50\%-8rem\)\] {
-  top: calc(50% - 8rem);
-}
-
-.top-\[calc\(50\)\] {
-  top: calc(50);
-}
-
-.top-\[calc\(50\%-0rem\)\] {
-  top: calc(50% - 0rem);
-}
-
-.top-\[calc\(50\%-9rem\)\] {
-  top: calc(50% - 9rem);
-}
-
-.top-\[calc\(50\%-2rem\)\] {
-  top: calc(50% - 2rem);
-}
-
-.top-\[calc\(50\%-4rem\)\] {
-  top: calc(50% - 4rem);
-}
-
-.top-\[calc\(50\%-6rem\)\] {
-  top: calc(50% - 6rem);
-}
-
 .z-10 {
   z-index: 10;
 }
@@ -759,10 +675,6 @@ video {
 
 .m-6 {
   margin: 1.5rem;
-}
-
-.m-auto {
-  margin: auto;
 }
 
 .mx-auto {
@@ -863,8 +775,20 @@ video {
   display: none;
 }
 
+.h-1\/2 {
+  height: 50%;
+}
+
 .h-12 {
   height: 3rem;
+}
+
+.h-16 {
+  height: 4rem;
+}
+
+.h-20 {
+  height: 5rem;
 }
 
 .h-4 {
@@ -891,16 +815,16 @@ video {
   height: 2rem;
 }
 
+.h-\[calc\(100\%-1rem\)\] {
+  height: calc(100% - 1rem);
+}
+
 .h-\[calc\(100\%-3\.5rem\)\] {
   height: calc(100% - 3.5rem);
 }
 
 .h-\[calc\(100\%-3rem\)\] {
   height: calc(100% - 3rem);
-}
-
-.h-\[calc\(100\%-8\.6rem\)\] {
-  height: calc(100% - 8.6rem);
 }
 
 .h-\[calc\(100\%-9rem\)\] {
@@ -911,76 +835,8 @@ video {
   height: calc(100vh - 4.2rem);
 }
 
-.h-full {
-  height: 100%;
-}
-
-.h-48 {
-  height: 12rem;
-}
-
 .h-auto {
   height: auto;
-}
-
-.h-28 {
-  height: 7rem;
-}
-
-.h-20 {
-  height: 5rem;
-}
-
-.h-1\/2 {
-  height: 50%;
-}
-
-.h-\[\] {
-  height: ;
-}
-
-.h-\[calc\] {
-  height: calc;
-}
-
-.h-\[calc\(\)\] {
-  height: calc();
-}
-
-.h-\[calc\(100\%\)\] {
-  height: calc(100%);
-}
-
-.h-\[calc\(100\%-\)\] {
-  height: calc(100% - );
-}
-
-.h-\[calc\(100\%-2rem\)\] {
-  height: calc(100% - 2rem);
-}
-
-.h-\[calc\(100\%-8rem\)\] {
-  height: calc(100% - 8rem);
-}
-
-.h-\[calc\(100\%-10rem\)\] {
-  height: calc(100% - 10rem);
-}
-
-.h-\[calc\(100\%-18rem\)\] {
-  height: calc(100% - 18rem);
-}
-
-.h-\[calc\(100\%-rem\)\] {
-  height: calc(100% - rem);
-}
-
-.h-\[calc\(100\%-6rem\)\] {
-  height: calc(100% - 6rem);
-}
-
-.h-\[calc\(100\%-1rem\)\] {
-  height: calc(100% - 1rem);
 }
 
 .h-fit {
@@ -988,32 +844,8 @@ video {
   height: fit-content;
 }
 
-.h-1 {
-  height: 0.25rem;
-}
-
-.h-16 {
-  height: 4rem;
-}
-
-.h-32 {
-  height: 8rem;
-}
-
-.h-24 {
-  height: 6rem;
-}
-
-.h-\[calc\(50\%\)\] {
-  height: calc(50%);
-}
-
-.h-\[calc\(50\%-4\)\] {
-  height: calc(50% - 4);
-}
-
-.h-\[calc\(50\%-4rem\)\] {
-  height: calc(50% - 4rem);
+.h-full {
+  height: 100%;
 }
 
 .min-h-screen {
@@ -1068,112 +900,12 @@ video {
   width: calc(100% - 17rem);
 }
 
-.w-full {
-  width: 100%;
-}
-
-.w-5\/6 {
-  width: 83.333333%;
-}
-
-.w-\[\] {
-  width: ;
-}
-
-.w-\[calac\] {
-  width: calac;
-}
-
-.w-\[calc\] {
-  width: calc;
-}
-
-.w-\[calc\(\)\] {
-  width: calc();
-}
-
-.w-\[calc\(100\)\] {
-  width: calc(100);
-}
-
-.w-\[calc\(100\%\)\] {
-  width: calc(100%);
-}
-
-.w-\[calc\(100\%-12rem\)\] {
-  width: calc(100% - 12rem);
-}
-
-.w-\[calc\(100\%-10rem\)\] {
-  width: calc(100% - 10rem);
-}
-
-.w-\[calc\(100\%-8rem\)\] {
-  width: calc(100% - 8rem);
-}
-
 .w-\[calc\(100\%-5rem\)\] {
   width: calc(100% - 5rem);
 }
 
-.w-2\/3 {
-  width: 66.666667%;
-}
-
-.w-1\/4 {
-  width: 25%;
-}
-
-.w-1\/3 {
-  width: 33.333333%;
-}
-
-.w-\[50\] {
-  width: 50;
-}
-
-.w-\[50\%\] {
-  width: 50%;
-}
-
-.w-\[\(50\%\)\] {
-  width: (50%);
-}
-
-.w-\[calc\(50\%\)\] {
-  width: calc(50%);
-}
-
-.w-\[calc\(50\%\+\)\] {
-  width: calc(50% + );
-}
-
-.w-\[calc\(50\%\+2rem\)\] {
-  width: calc(50% + 2rem);
-}
-
-.w-\[calc\(50\%-2rem\)\] {
-  width: calc(50% - 2rem);
-}
-
-.w-\[calc\(50\%-4rem\)\] {
-  width: calc(50% - 4rem);
-}
-
-.w-\[calc\(50\%-rem\)\] {
-  width: calc(50% - rem);
-}
-
-.w-\[calc\(50\%-5rem\)\] {
-  width: calc(50% - 5rem);
-}
-
-.w-\[calc\(50\%-6rem\)\] {
-  width: calc(50% - 6rem);
-}
-
-.w-\[calc\(50\%-10rem\)\] {
-  width: calc(50% - 10rem);
+.w-full {
+  width: 100%;
 }
 
 .min-w-full {
@@ -1261,10 +993,6 @@ video {
 
 .gap-2 {
   gap: 0.5rem;
-}
-
-.gap-3 {
-  gap: 0.75rem;
 }
 
 .gap-4 {

@@ -2,13 +2,13 @@
 
 class PrescriptionDetail extends CActiveRecord
 {
-    // Tentukan nama tabel yang digunakan oleh model
+    
     public function tableName()
     {
         return 'prescription_details';
     }
 
-    // Tentukan aturan validasi untuk model
+    
     public function rules()
     {
         return array(
@@ -17,7 +17,7 @@ class PrescriptionDetail extends CActiveRecord
         );
     }
 
-    // Tentukan hubungan dengan tabel lain
+    
     public function relations()
     {
         return array(
@@ -26,7 +26,7 @@ class PrescriptionDetail extends CActiveRecord
         );
     }
 
-    // Tentukan nama model
+    
     public static function model($className=__CLASS__)
     {
         return parent::model($className);

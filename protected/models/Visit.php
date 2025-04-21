@@ -9,7 +9,7 @@ class Visit extends CActiveRecord
 
     public function tableName()
     {
-        return 'visits'; // sesuaikan dengan nama tabel kamu
+        return 'visits'; 
     }
 
     public function relations()
@@ -25,7 +25,7 @@ class Visit extends CActiveRecord
 {
     return array(
         array('doctor_id', 'required', 'message' => 'Dokter harus dipilih'),
-        // aturan validasi lainnya
+        
     );
 }
 

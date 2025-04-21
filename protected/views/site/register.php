@@ -23,7 +23,6 @@ $this->breadcrumbs = array('Register');
       'clientOptions' => array('validateOnSubmit' => true),
     )); ?>
 
-    <!-- Username -->
     <div class="mb-4">
       <?php echo $form->labelEx($model, 'username', array('class' => 'block text-gray-700 mb-1')); ?>
       <?php echo $form->textField($model, 'username', array(
@@ -32,7 +31,6 @@ $this->breadcrumbs = array('Register');
       <?php echo $form->error($model, 'username', array('class' => 'text-red-500 text-sm')); ?>
     </div>
 
-    <!-- Password -->
     <div class="mb-4">
       <?php echo $form->labelEx($model, 'password', array('class' => 'block text-gray-700 mb-1')); ?>
       <?php echo $form->passwordField($model, 'password', array(
@@ -41,7 +39,6 @@ $this->breadcrumbs = array('Register');
       <?php echo $form->error($model, 'password', array('class' => 'text-red-500 text-sm')); ?>
     </div>
 
-    <!-- Role -->
     <div class="mb-4">
       <?php echo $form->labelEx($model, 'role', array('class' => 'block text-gray-700 mb-1')); ?>
       <?php echo $form->dropDownList($model, 'role', array(
@@ -56,14 +53,12 @@ $this->breadcrumbs = array('Register');
       <?php echo $form->error($model, 'role', array('class' => 'text-red-500 text-sm')); ?>
     </div>
 
-    <!-- Submit Button -->
     <div class="mb-6">
       <button type="submit" class="w-full px-4 py-2 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 transition">
         Register
       </button>
     </div>
 
-    <!-- Link ke Login -->
     <div class="text-center text-sm text-gray-600">
       Sudah punya akun?
       <a href="<?php echo Yii::app()->createUrl('/site/login'); ?>" class="text-blue-500 hover:underline">Login</a>

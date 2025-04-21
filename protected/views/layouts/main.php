@@ -12,7 +12,6 @@ $user = User::model()->findByPk(Yii::app()->user->id);
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="language" content="en">
 
-    <!-- Tailwind CSS -->
     <link rel="stylesheet" href="<?= Yii::app()->baseUrl ?>/css/styles.css">
     <!-- <link rel="stylesheet" href="<?= Yii::app()->baseUrl ?>/css/tailwind.css"> -->
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
@@ -55,16 +54,14 @@ $user = User::model()->findByPk(Yii::app()->user->id);
 <?php endif; ?>
 
 <script>
-    // Fungsi untuk menutup alert
     function closeAlert(alertId) {
         const alert = document.getElementById(alertId);
-        alert.classList.add('opacity-0'); // Tambahkan efek fade out
+        alert.classList.add('opacity-0'); 
         setTimeout(function() {
-            alert.classList.add('hidden'); // Sembunyikan alert setelah animasi selesai
+            alert.classList.add('hidden');
         }, 300);
     }
     
-    // Secara otomatis sembunyikan alert setelah 5 detik
     setTimeout(function() {
         const successAlert = document.getElementById('success-alert');
         const errorAlert = document.getElementById('error-alert');
@@ -87,7 +84,6 @@ $user = User::model()->findByPk(Yii::app()->user->id);
 
     <div id="page" class="flex flex-col h-full flex-grow">
 
-<!-- Navbar -->
 <nav class="bg-blue-500 p-4 shadow-md">
   <div class="flex justify-between items-center px-10">
     <a href="<?php echo Yii::app()->createUrl('/site/index'); ?>" class="text-white text-3xl font-bold">
@@ -146,7 +142,6 @@ $user = User::model()->findByPk(Yii::app()->user->id);
 
 
 <div id="menu" class="hidden flex-col h-full w-1/2 py-10 px-6 space-y-6 text-white font-semibold fixed right-0 top-0 bg-blue-500 z-10">
-  <!-- Tombol close -->
   <button onclick="toggleMenu()" class="absolute
    top-5 right-14 text-white text-2xl font-bold focus:outline-none">
     ✕
@@ -164,11 +159,9 @@ $user = User::model()->findByPk(Yii::app()->user->id);
     </a>
   <?php endif; ?>
 </div>
-        <!-- Main Content -->
         <?php echo $content; ?>
-    </div><!-- page -->
+    </div>
 
-    <!-- Footer sekarang DI LUAR div#page -->
     <footer class="bg-blue-500 text-white p-4">
         <div class="text-center">
             Alpi Darul Hakim - <?php echo Yii::powered(); ?> - 17 April 2025
@@ -182,7 +175,6 @@ $user = User::model()->findByPk(Yii::app()->user->id);
     if (menu.classList.contains('hidden')) {
         menu.classList.remove('hidden');
         menu.classList.add('flex');
-        // menu.classList.add('border-t');
     } else {
         menu.classList.remove('flex');
         menu.classList.add('hidden');

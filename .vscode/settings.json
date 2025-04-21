@@ -1,3 +1,13 @@
 {
-  "intelephense.environment.includePaths": ["D:/yii/framework"]
+  "intelephense.environment.includePaths": ["D:/yii/framework"],
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

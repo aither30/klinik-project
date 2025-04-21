@@ -9,7 +9,7 @@ class Medicine extends CActiveRecord
 
     public function tableName()
     {
-        return 'medicines'; // Nama tabel sesuai database
+        return 'medicines'; 
     }
 
     public function rules()

@@ -27,9 +27,9 @@ class User extends CActiveRecord
     {
         return array(
             'id' => 'ID',
-            'name' => 'Name', // Pastikan ada kolom 'name' disini
+            'name' => 'Name', 
             'role' => 'Role',
-            // kolom lain...
+            
         );
     }
     

@@ -26,7 +26,7 @@ class Payment extends CActiveRecord
     {
         return [
             'prescription' => [self::BELONGS_TO, 'Prescription', 'prescription_id'],
-            // lewat prescription → visit → patient
+            
             'patient' => [self::HAS_ONE, 'Patient', ['id'=>'patient_id'], 'through'=>'prescription.visit'],
         ];
     }

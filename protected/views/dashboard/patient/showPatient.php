@@ -1,16 +1,14 @@
 <?php
-/* @var $this DashboardController */
-/* @var $patient Patient */
+
+
 
 $this->pageTitle = 'Detail Pasien';
 ?>
 
 <div class="m-4 p-6 bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg shadow-xl">
 
-    <!-- Judul -->
     <h1 class="text-3xl font-bold text-gray-900 mb-6">Detail Pasien</h1>
 
-    <!-- Informasi Pasien -->
     <div class="bg-white shadow-md rounded-xl p-6 border border-gray-200 mb-6">
         <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 text-sm text-gray-800">
             <div>
@@ -40,7 +38,6 @@ $this->pageTitle = 'Detail Pasien';
         </dl>
     </div>
 
-    <!-- Riwayat Kunjungan -->
     <div>
         <h2 class="text-2xl font-semibold text-gray-900 mb-4">Riwayat Kunjungan</h2>
 
@@ -60,13 +57,13 @@ $this->pageTitle = 'Detail Pasien';
                                 <td class="px-4 py-2 border-b"><?php echo date('d M Y, H:i', strtotime($visit->visit_date)); ?></td>
                                 <td class="px-4 py-2 border-b"><?php echo CHtml::encode($visit->purpose); ?></td>
                                 <td class="px-4 py-2 border-b">
-                                <?php 
-    if ($visit->doctor && $visit->doctor->role === 'dokter') {
-        echo CHtml::encode($visit->doctor->username); 
-    } else {
-        echo '<span class="text-red-500 italic">Tidak tersedia</span>';
-    }
-?>
+                                    <?php
+                                    if ($visit->doctor && $visit->doctor->role === 'dokter') {
+                                        echo CHtml::encode($visit->doctor->username);
+                                    } else {
+                                        echo '<span class="text-red-500 italic">Tidak tersedia</span>';
+                                    }
+                                    ?>
 
                                 </td>
                             </tr>
@@ -79,10 +76,9 @@ $this->pageTitle = 'Detail Pasien';
         <?php endif; ?>
     </div>
 
-    <!-- Tombol Kembali -->
     <div class="pt-4">
         <a href="<?php echo Yii::app()->createUrl('dashboard/adminDashboard'); ?>"
-           class="inline-block bg-blue-600 text-white font-semibold py-2 px-6 rounded-xl shadow-md">
+            class="inline-block bg-blue-600 text-white font-semibold py-2 px-6 rounded-xl shadow-md">
             ← Kembali ke daftar
         </a>
     </div>

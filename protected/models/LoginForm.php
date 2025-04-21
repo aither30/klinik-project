@@ -9,7 +9,7 @@ class LoginForm extends CFormModel
 {
     public $username;
     public $password;
-    public $rememberMe; // Menambahkan properti rememberMe
+    public $rememberMe; 
 
     private $_identity;
 
@@ -19,7 +19,7 @@ class LoginForm extends CFormModel
             array('username, password', 'required'),
             array('password', 'length', 'min' => 6),
 			array('password', 'authenticate'),
-            array('rememberMe', 'boolean'), // Menambahkan aturan validasi untuk rememberMe
+            array('rememberMe', 'boolean'), 
         );
     }
 
@@ -47,7 +47,7 @@ class LoginForm extends CFormModel
     public function login()
     {
         if ($this->validateLogin()) {
-            return Yii::app()->user->login($this->_identity, $this->rememberMe ? 3600*24*30 : 0); // Menambahkan waktu session jika rememberMe dicentang
+            return Yii::app()->user->login($this->_identity, $this->rememberMe ? 3600*24*30 : 0); 
         }
         return false;
     }

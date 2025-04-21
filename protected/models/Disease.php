@@ -4,7 +4,7 @@ class Disease extends CActiveRecord
 {
     public function tableName()
     {
-        return 'diseases'; // Nama tabel di database
+        return 'diseases'; 
     }
 
     public function rules()

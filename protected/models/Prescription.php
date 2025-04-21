@@ -10,7 +10,7 @@ class Prescription extends CActiveRecord
 
     public function tableName()
     {
-        return 'prescriptions'; // Nama tabel di database, sesuaikan kalau beda
+        return 'prescriptions'; 
     }
 
     public function rules()

@@ -7,13 +7,13 @@ class Patient extends CActiveRecord
         return parent::model($className);
     }
 
-    // Menentukan nama tabel yang digunakan oleh model ini
+    
     public function tableName()
     {
-        return 'patients';  // Nama tabel yang digunakan adalah 'patients'
+        return 'patients';  
     }
 
-    // Mendefinisikan aturan validasi untuk kolom tabel
+    
     public function rules()
     {
         return [
@@ -27,7 +27,7 @@ class Patient extends CActiveRecord
         ];
     }
 
-    // Mendefinisikan relasi-relasi antar tabel
+    
     public function relations()
     {
         return [
@@ -38,13 +38,13 @@ class Patient extends CActiveRecord
         ];
     }
 
-    // Menentukan nama kolom kunci utama di tabel
+    
     public function primaryKey()
     {
-        return 'id';  // ID pasien adalah primary key di tabel 'patients'
+        return 'id';  
     }
 
-    // Mendefinisikan format data yang ditampilkan oleh model
+    
     public function __toString()
     {
         return $this->name;
