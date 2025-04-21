@@ -93,7 +93,10 @@ $this->pageTitle = Yii::app()->name . ' - Admin Dashboard';
 </div>
 
 
-    <h2 class="text-2xl font-bold text-white">Admin Dashboard</h2>
+<h2 class="text-2xl font-bold text-white">
+  <?php echo ucwords(str_replace('_', ' ', Yii::app()->user->role)); ?> Dashboard
+</h2>
+
 </div>
 
             
