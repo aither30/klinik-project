@@ -39,16 +39,21 @@ return array(
 		),
 
 		// uncomment the following to enable URLs in path-format
-		/*
-		'urlManager'=>array(
-			'urlFormat'=>'path',
-			'rules'=>array(
-				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
-				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
-				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
-			),
-		),
-		*/
+// 'urlManager'=>array(
+//     'urlFormat'=>'path',
+//     'rules'=>array(
+//         'dashboard/user/manage' => 'dashboard/user/manage',
+//         'dashboard/patient/manage' => 'dashboard/patient/manage',
+//         'dashboard/treatment/manage' => 'dashboard/treatment/manage',
+//         'dashboard/payment/manage' => 'dashboard/payment/manage',
+//         'dashboard/staff/manage' => 'dashboard/staff/manage',
+//         'dashboard/patient/create' => 'dashboard/patient/create',
+//         'dashboard/treatment/create' => 'dashboard/treatment/create',
+//         'dashboard/payment/create' => 'dashboard/ayment/create',
+// 		'dashboard/staffManage' => 'dashboard/staffManage',
+//     ),
+// ),
+
 
 		// database settings are configured in database.php
 		'db'=>require(dirname(__FILE__).'/database.php'),

@@ -1,7 +1,8 @@
-assets/*
+/assets/
 !assets/.gitignore
-protected/runtime/*
-!protected/runtime/.gitignore
-protected/data/*.db
-themes/classic/views/
-node_modules
+/protected/runtime/
+/protected/runtime/.gitignore
+/protected/data/*.db
+/themes/classic/views/
+/node_modules
+.vscode/

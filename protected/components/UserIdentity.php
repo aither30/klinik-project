@@ -10,7 +10,7 @@ class UserIdentity extends CUserIdentity
 
         if ($user === null) {
             $this->errorCode = self::ERROR_USERNAME_INVALID;
-        } elseif ($user->password !== md5($this->password)) { // menggunakan md5, sebaiknya gunakan hashing yang lebih aman seperti bcrypt
+        } elseif (!CPasswordHelper::verifyPassword($this->password, $user->password)) {
             $this->errorCode = self::ERROR_PASSWORD_INVALID;
         } else {
             $this->_id = $user->id;
@@ -27,4 +27,5 @@ class UserIdentity extends CUserIdentity
         return $this->_id;
     }
 }
+
 ?>

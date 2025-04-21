@@ -88,6 +88,11 @@ $this->breadcrumbs = array(
         <h2 class="text-4xl font-extrabold text-center text-gray-800 mb-6">Login</h2>
 
         <p class="text-center text-gray-600 mb-6">Please fill out the form below to access your account.</p>
+        <?php if(Yii::app()->user->hasFlash('error')): ?>
+    <div class="alert alert-danger text-black">
+        <?php echo Yii::app()->user->getFlash('error'); ?>
+    </div>
+<?php endif; ?>
 
         <?php $form = $this->beginWidget('CActiveForm', array(
             'id' => 'login-form',
@@ -99,13 +104,13 @@ $this->breadcrumbs = array(
 
         <div class="mb-4">
             <?php echo $form->labelEx($model, 'username', array('class' => 'block text-lg font-medium text-gray-700')); ?>
-            <?php echo $form->textField($model, 'username', array('class' => 'mt-2 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 transform hover:scale-105')); ?>
+            <?php echo $form->textField($model, 'username', array('class' => 'mt-2 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 transform hover:scale-105 text-black')); ?>
             <?php echo $form->error($model, 'username', array('class' => 'text-red-600 text-sm mt-1')); ?>
         </div>
 
         <div class="mb-4">
             <?php echo $form->labelEx($model, 'password', array('class' => 'block text-lg font-medium text-gray-700')); ?>
-            <?php echo $form->passwordField($model, 'password', array('class' => 'mt-2 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 transform hover:scale-105')); ?>
+            <?php echo $form->passwordField($model, 'password', array('class' => 'mt-2 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 transform hover:scale-105 text-black' )); ?>
             <?php echo $form->error($model, 'password', array('class' => 'text-red-600 text-sm mt-1')); ?>
             <p class="text-sm text-gray-500 mt-2">
                 Hint: You may login with <kbd class="bg-gray-200 p-1 rounded">demo</kbd>/<kbd class="bg-gray-200 p-1 rounded">demo</kbd> or <kbd class="bg-gray-200 p-1 rounded">admin</kbd>/<kbd class="bg-gray-200 p-1 rounded">admin</kbd>.

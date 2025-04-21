@@ -27,11 +27,14 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
+		
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
 		$this->render('index');
+		
 	}
 
+	
 	/**
 	 * This is the action to handle external exceptions.
 	 */
@@ -79,17 +82,13 @@ class SiteController extends Controller
 	{
 		$model = new LoginForm;
 	
-		// Jika sudah login, redirect ke halaman home
-		if (!Yii::app()->user->isGuest) {
-			$this->redirect(array('site/index'));
-		}
-	
+		// Jika ada input login
 		if (isset($_POST['LoginForm'])) {
 			$model->attributes = $_POST['LoginForm'];
-	
 			if ($model->validate() && $model->login()) {
-				// Redirect setelah login berhasil
 				$this->redirect(Yii::app()->user->returnUrl);
+			} else {
+				Yii::app()->user->setFlash('error', 'Username atau Password salah.');
 			}
 		}
 	
@@ -97,21 +96,50 @@ class SiteController extends Controller
 	}
 	
 
+	
+	
 	public function actionRegister()
 {
-  $model = new User;
+    // Membuat objek model untuk user
+    $model = new User;
 
-  if (isset($_POST['User'])) {
-    $model->attributes = $_POST['User'];
-    $model->password = md5($model->password); // atau bcrypt kalau support
-    if ($model->save()) {
-      Yii::app()->user->setFlash('success', 'Akun berhasil dibuat. Silakan login.');
-      $this->redirect(array('site/login'));
+    // Jika form di-submit dan data valid
+    if (isset($_POST['User'])) {
+        // Mengisi atribut model dengan data dari form
+        $model->attributes = $_POST['User'];
+
+        // Validasi data
+        if ($model->validate()) {
+            // Hash password sebelum disimpan
+            $model->password = CPasswordHelper::hashPassword($model->password);
+
+            // Coba untuk menyimpan data
+            try {
+                if ($model->save()) {
+                    // Redirect ke halaman login setelah registrasi sukses
+                    $this->redirect(array('site/login'));
+                }
+            } catch (CDbException $e) {
+                // Jika terjadi error pada database (misalnya duplikasi username)
+                if ($e->getCode() == 23505) {
+                    // Kode error untuk duplikasi (PostgreSQL)
+                    Yii::app()->user->setFlash('error', 'Username sudah digunakan. Silakan pilih username lain.');
+                } else {
+                    // Pesan umum untuk error lain
+                    Yii::app()->user->setFlash('error', 'Terjadi kesalahan saat menyimpan data. Silakan coba lagi.');
+                }
+            }
+        } else {
+            // Jika validasi gagal, tampilkan pesan error
+            Yii::app()->user->setFlash('error', 'Ada kesalahan pada form. Periksa kembali data yang dimasukkan.');
+        }
     }
-  }
 
-  $this->render('register', array('model' => $model));
+    // Render tampilan register.php dengan mengirimkan model
+    $this->render('register', array('model' => $model));
 }
+
+
 
 	/**
 	 * Logs out the current user and redirect to homepage.
@@ -125,31 +153,15 @@ class SiteController extends Controller
 
 	public function actionAdminDashboard()
 	{
-		// Mengambil jumlah total pasien
-		$totalPasien = Yii::app()->db->createCommand("SELECT COUNT(*) FROM users WHERE role='pasien'")->queryScalar();
-	
-		// Mengambil jumlah total tindakan medis
-		$totalTindakan = Yii::app()->db->createCommand('SELECT COUNT(*) FROM tindakan')->queryScalar();
-	
-		// Mengambil total pembayaran (asumsi ada tabel pembayaran)
-		$totalPembayaran = Yii::app()->db->createCommand("SELECT COALESCE(SUM(jumlah), 0) FROM pembayaran")->queryScalar();
-	
-		// Ambil data profil admin yang sedang login
-		$admin = Yii::app()->user->id; // Ambil ID admin yang sedang login
-		$model = User::model()->findByPk($admin);
-	
-		// Ambil aktivitas terbaru untuk Recent Activity (Opsional)
-		$recentActivities = $this->getRecentActivities();
-	
-		// Render halaman dashboard
-		$this->render('adminDashboard', array(
-			'totalPasien' => $totalPasien,
-			'totalTindakan' => $totalTindakan,
-			'totalPembayaran' => $totalPembayaran,
-			'model' => $model,  // data profil admin
-			'recentActivities' => $recentActivities, // data aktivitas terbaru
-		));
+		// Ambil data user atau informasi lainnya jika diperlukan
+		$user = User::model()->findByPk(Yii::app()->user->id);
+		
+		// Render view yang berada di protected/views/dashboard/adminDashboard.php
+		$this->render('/dashboard/adminDashboard', [
+			'model' => $user
+		]);
 	}
+	
 	private function getRecentActivities()
 {
     // Cek jika tabel 'activities' ada
@@ -162,5 +174,19 @@ class SiteController extends Controller
     }
 }
 
+ // Action untuk menampilkan dashboard admin
+ public function actionDashboard()
+ {
+	 // Ambil data model yang dibutuhkan, seperti data admin atau user
+	 $model = User::model()->findByPk(1);  // Contoh data user atau model yang lain
+
+	 // Jika ini permintaan AJAX, render partial view untuk memuat konten dinamis
+	 if (Yii::app()->request->isAjaxRequest) {
+		 $this->renderPartial('dashboardContent', ['model' => $model], false, true);
+	 } else {
+		 // Jika bukan AJAX, tampilkan tampilan penuh
+		 $this->render('dashboard', ['model' => $model]);
+	 }
+ }
 
 }

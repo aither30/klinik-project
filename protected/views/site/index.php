@@ -63,8 +63,8 @@ $this->pageTitle = Yii::app()->name;
       <svg class="h-12 w-12 mx-auto text-purple-500 mb-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3a.75.75 0 00-.75.75v1.5H6.75A.75.75 0 006 6v12a.75.75 0 00.75.75h10.5A.75.75 0 0018 18V6a.75.75 0 00-.75-.75h-2.25v-1.5a.75.75 0 00-.75-.75h-4.5zM9 9h6m-6 3h3" />
       </svg>
-      <h3 class="text-xl font-semibold text-gray-800 mb-2 text-center">Tindakan & Resep</h3>
-      <p class="text-gray-600 text-center">Catat tindakan medis dan resep obat dengan cepat dan aman.</p>
+      <h3 class="text-xl font-semibold text-gray-800 mb-2 text-center">Tindakan & Obat</h3>
+      <p class="text-gray-600 text-center">Catat tindakan medis dengan obat yang diperlukan.</p>
     </div>
 
     <!-- Pembayaran -->

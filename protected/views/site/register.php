@@ -9,6 +9,12 @@ $this->breadcrumbs = array('Register');
 
 <div class="flex items-center justify-center min-h-screen bg-gray-100">
   <div class="w-full max-w-md bg-white rounded-xl shadow-md p-8">
+  <?php if(Yii::app()->user->hasFlash('error')): ?>
+    <div class="alert alert-danger">
+        <?php echo Yii::app()->user->getFlash('error'); ?>
+    </div>
+<?php endif; ?>
+
     <h2 class="text-2xl font-bold text-center text-blue-600 mb-6">Buat Akun Baru</h2>
 
     <?php $form = $this->beginWidget('CActiveForm', array(
